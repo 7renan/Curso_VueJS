@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ title }}</p>
+    <p>{{ salutation() }}</p>
+    <p>
+        <a v-bind:href=" link ">Vá para o G1.com</a>
+    </p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            title: 'Usando Vue JS',
+            msg: 'Olá, Seja Bem Vindo!',
+            link: 'https://g1.globo.com/',
+        },
+        methods: {
+            salutation: function() {
+                return this.msg
+            }
+        }
+    })
+</script>
