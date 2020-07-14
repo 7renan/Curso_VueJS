@@ -1,0 +1,52 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<div id="app">
+    <p>Contador:</p>
+    <p>{{ count }}</p>
+    <button v-on:click="somar(5)">Somar + 1</button>
+    <p>Mouse - X: {{ x }}  Y: {{ y }}</p>
+    <div v-on:mousemove="updateMouse()" id="areamouse">
+        <div v-on:mousemove.stop id="areamenor">
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            count: 0,
+            x: 0,
+            y: 0,
+        },
+        methods: {
+            somar(pass){
+                console.log(event)
+                this.count+= pass
+            },
+            updateMouse(){
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+        }
+    })
+</script>
+
+<style>
+    #areamouse{
+        width: 250px;
+        height: 250px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #areamenor{
+        background-color: #fff;
+        width: 100px;
+        height: 100px;
+    }
+</style>
