@@ -1,0 +1,39 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<style>
+    #app{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .demo {
+        width: 200px;
+        height: 200px;
+        background-color: gray;
+        border-radius: 50%;
+    }
+
+    .c1{background-color: green; }
+
+    .c2{ background-color: yellow; }
+
+    .c3{ background-color: red; }
+    
+</style>
+
+<div id="app">
+    <div @click="applyColorGreen = !applyColorGreen" class="demo" :class="{c1: applyColorGreen}"></div>
+    <div @click="applyColorYellow = !applyColorYellow" class="demo" :class="{c2: applyColorYellow}"></div>
+    <div @click="applyColorRed = !applyColorRed" class="demo" :class="{c3: applyColorRed}"></div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            applyColorGreen: false,
+            applyColorYellow: false,
+            applyColorRed: false,
+        }
+    })
+</script>
