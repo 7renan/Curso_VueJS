@@ -1,0 +1,42 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<style>
+    #app{
+        text-align: center;
+    }
+
+    #box{
+        width: 150px;
+        height: 150px;
+    }
+
+    .verde{background-color: green;}
+    .preto{background-color: black;}
+    .azul{background-color: blue;}
+    .amarelo{background-color: yellow;}
+    .vermelho{background-color: red;}
+
+
+</style>
+
+<div id="app">
+    <div id="box" :class="class_color">
+       
+    </div>
+    <hr>
+
+    <div>
+        <input v-model="class_color" type="text">
+    </div>
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            class_color: 'azul',
+        }
+    })
+</script>
