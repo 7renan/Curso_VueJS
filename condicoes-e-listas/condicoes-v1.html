@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<div id="app">
+    <h2 v-if="loged">Usuário Logado: {{ user }}</h2>
+    <h2 v-else="!loged">Sem usuário logado ...</h2>
+    <p>
+        <button @click="loged = !loged">{{ loged ? 'Sair':'Entrar' }}</button>
+    </p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            user: 'Renan Lima',
+            loged: false,
+        }
+    })
+</script>

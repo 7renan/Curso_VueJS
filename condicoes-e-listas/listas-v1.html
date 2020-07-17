@@ -1,0 +1,36 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<div id="app">
+   <ul>
+       <li v-for="(color, i) in colors ">{{ i }}) - {{ color }}</li>
+   </ul>
+   <hr>
+   <h3>Lista de pessoas</h3>
+   <ul>
+       <li v-for="people in peoples">
+            <div v-for="(value, i) in people">
+               {{ i }} : {{ value }}
+            </div>
+       </li>
+   </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            colors: ['azul', 'amarelo', 'vermelho'],
+            peoples: [
+                {
+                    name: 'Renan Lima',
+                    age:25,
+                },
+                {
+                    name: 'Cristiano Ronaldo',
+                    age: 29,
+                }
+            ]
+        }
+    })
+</script>
